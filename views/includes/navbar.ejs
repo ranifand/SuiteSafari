@@ -1,0 +1,91 @@
+<style>
+  .btn-search {
+    background-color: #0C134F;
+    color: #e4e9f4;
+    margin-left: 0.2rem;
+    border-radius: 20px;
+  }
+  .btn-search:hover {
+    background-color: #0C134F;
+    color: #e4e9f4;
+  }
+  .search-input {
+    width: 17rem;
+    background-color: white;
+    border: none;
+    display :flex;
+    justify-content: center;
+    align-items:center;
+    border-radius: 20px;
+    margin-left: 5rem;
+  }
+  .search {
+    background-color: white;
+    text-decoration: none;
+    border: none;
+  }
+  .search:focus, .search:active {
+    outline: none !important;
+    box-shadow: none;
+ }
+ .search-icon {
+  color: #0C134F;
+  padding-left: 1rem;
+ }
+</style>
+
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <!-- <a class="navbar-brand" href="/"><i class="fa-brands fa-slack"></i></a> -->
+    <a class="navbar-brand" href="/listings"><i class="fa-brands fa-slack"></i></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!--Explore-->
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <!-- <a class="nav-link" href="/">Home</a> -->
+        <a class="nav-link" href="/listings">Explore</a>
+      </div>
+
+      <!-- search Bar -->
+
+      <div class="navbar-nav ms-auto ">
+        <form class="d-flex" role="search">
+          <div class="search-input">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input class="form-control me-2 search focus-ring focus-ring-light" type="search" placeholder="Destination discovery!">
+          </div>
+          <button class="btn btn-search" type="submit">Search</button>
+        </form>
+      </div>
+
+      <!--Login Signup-->
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="/listings/new">SafariStay</a>
+        <% if(!currUser) { %>
+          <a class="nav-link" href="/signup"><b>Sign Up</b></a>
+          <a class="nav-link" href="/login"><b>Log in</b></a>
+        <% } %>
+        <% if(currUser) { %>
+        <a class="nav-link" href="/logout"><b>Log out</b></a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+<!-- <div class="navbar-nav ms-auto ">
+  <form class="d-flex" role="search">
+    <div class="search-input">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input class="form-control me-2 search" type="search" placeholder="Destination discovery!" aria-label="Search">
+    </div>
+    <button class="btn btn-search" type="submit">Search</button>
+  </form>
+</div> -->
