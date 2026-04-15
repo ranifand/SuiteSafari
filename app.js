@@ -1,3 +1,4 @@
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 if(process.env.NODE_ENV != "production") {
     require('dotenv').config();
 }
@@ -29,9 +30,18 @@ main().then(() => {
     console.log(err);
 })
 
+// async function main() {
+//     await mongoose.connect(dbUrl);
+//     //await mongoose.connect(MONGO_URL);
+// }
+
 async function main() {
-    await mongoose.connect(dbUrl);
-    //await mongoose.connect(MONGO_URL);
+    await mongoose.connect(dbUrl, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        tls: true,
+        tlsAllowInvalidCertificates: true
+    });
 }
 
 app.set("view engine", "ejs");
