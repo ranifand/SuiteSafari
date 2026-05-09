@@ -2,7 +2,7 @@ SuiteSafari 🏨
 A full-stack hotel listing and booking web application where users can explore, create, and review hotel listings.
 
 Live Demo
-🔗 suitesafari.onrender.com
+https://suitesafari.onrender.com
 
 Features
 Browse hotel listings with images
